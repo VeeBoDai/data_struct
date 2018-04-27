@@ -1,3 +1,6 @@
+#ifndef __DOUBLY_ORDER_LIST_H__
+#define #ifndef __DOUBLY_ORDER_LIST_H__
+
 #include <stdlib.h>
 #include <iostream>
 
@@ -23,3 +26,4 @@ private:
 	pnode _end;
 };
 
+#endif
