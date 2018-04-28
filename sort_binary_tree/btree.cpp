@@ -73,8 +73,9 @@ bool Btree::Delete(pnode &pos, int k){
 	}else if(k > pos->data){
 		return Delete(pos->right, k);
 	}else{
-		if(NULL != pos->left && NULL != pos->right){
-			return Delete2(pos);
+		if(NULL == pos->left && NULL == pos->right){
+			delete pos;
+			pos = NULL;
 		}else if(NULL == pos->left){
 			pnode temp = pos->right;
 			pos->data = temp->data;
@@ -90,8 +91,7 @@ bool Btree::Delete(pnode &pos, int k){
 			delete temp;
 			temp = NULL;
 		}else{
-			delete pos;
-			pos = NULL;
+			return Delete2(pos);
 		}
 		return true;
 	}
