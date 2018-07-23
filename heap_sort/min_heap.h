@@ -35,7 +35,7 @@ void Swap(T& a, T& b)
 	b = t;
 }
 
-templiate<class T>
+template<class T>
 void Adjust(T a[], int i, int n)
 {
 	T min;
